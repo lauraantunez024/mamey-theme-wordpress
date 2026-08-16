@@ -1,0 +1,59 @@
+:root {
+    --primary-color: #3e2723;
+    --secondary-color: #dd6a41;
+    --accent-color: #ffdab9;
+    --natural-brown: #7e5835;
+}
+
+
+/* main sections */
+
+body {
+    margin: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+nav {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    height: 100%;
+
+}
+
+h1 {
+    font-family: "Work Sans", sans-serif;
+    color: var(--secondary-color);
+    font-weight: 300;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* Hero */
+section.business-card {
+    background-color: var(--primary-color);
+}
+
+/* Skills */
+
+.skills__title {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.skill-list__skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+/* Projects */
+/* About */
