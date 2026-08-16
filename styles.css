@@ -34,6 +34,11 @@ nav {
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 section {
     padding: 5%;
     min-height: 100%;
@@ -53,14 +58,118 @@ section h1 {
 li {
     list-style-type: none;
 }
-
-
 /* Hero */
-section.business-card {
+.hero
+ {
     background-color: var(--primary-color);
     width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero__body {
 
 }
+
+.skill_carousel {
+    position: relative;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro__name {
+    font-weight: 400;
+    margin-bottom: -2%;
+}
+
+.intro__title {
+    color: var(--accent-color); 
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.skill-carousel__subtext {
+    font-size: 1.5rem;
+    color: var(--secondary-color)
+}
+
+/* Spinning carousel */
+
+@keyframes rotate {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0, -25px, 0);        
+    }
+}
+
+@keyframes rotate-last {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.spinning {
+    opacity: 0;
+    margin-bottom: 0;
+    position: absolute;
+    font-size: 2em;
+    color: var(--accent-color)
+}
+.spinning:after {
+    opacity: 1;
+}
+
+.spinning:nth-of-type(1) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+}
+
+.spinning:nth-of-type(2) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 1.75s;
+}
+
+.spinning:nth-of-type(3) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 3.25s;
+}
+
+.spinning:nth-of-type(4) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 4.75s;
+}
+
+.spinning:nth-of-type(5) {
+    animation-name: rotate-last;
+    animation-duration: 1.5s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+
 
 /* Skills */
 
@@ -95,7 +204,7 @@ section.business-card {
 }
 
 .skills__body {
-    margin: 5%;
+    margin: 2% 5%;
     
 }
 .skill-list__skill {
@@ -109,6 +218,10 @@ section.business-card {
     margin: 1em;
 
 }
+
+.skill-list__skill:hover {
+    transform: scale(1.1)
+}
 /* Projects */
 .projects {
     display: flex;
@@ -120,10 +233,10 @@ section.business-card {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10%;
+    column-gap: 20%;
 }
 .project-card {
-    padding: 5%;
+    padding: 2%;
     background-color: var(--accent-color);
     max-width: 40%;
     max-height: min-content;
@@ -133,7 +246,12 @@ section.business-card {
     justify-content: space-between; 
     text-align: center;
     box-shadow: var(--natural-brown) 1rem 1rem;
+    margin-bottom: 10%;
 
+}
+
+.project-card:hover {
+    transform: scale(1.1)
 }
 
 .project-card__title {
@@ -152,4 +270,69 @@ section.business-card {
     gap: 10%;
 }
 
+
 /* About */
+
+.about {
+    background-color: var(--accent-color);
+    
+}
+
+
+.about__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.about__title {
+    text-align: center;
+    font-weight: 400;
+}
+
+.about__image {
+    border-radius: 20%;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+}
+
+
+.about-text__description {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.about-text__header {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+footer {
+    background-color: var(--primary-color);
+}
+
+.contact__header {
+    color: var(--secondary-color);
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.contact__body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+    font-size: 2rem;
+    color: var(--accent-color)
+}
